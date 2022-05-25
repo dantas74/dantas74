@@ -4,12 +4,12 @@ Hi 👋 My name is Matheus Dantas Ricardo
 Trainee Backend Developer
 -------------------------
 
-I've been learning web development and about databases since 2021, when I started my studies by doing a certificate in IT, and later I'm going to make a college also related in IT. The first language that I learned was Python and I have a great love for it, but I'm also doing some projects using Node.js using Typescript, developing APIs Rest.
+I've been learning web development and databases since 2021, when I started my studies in IT. Currently I'm about to start a college related in IT. The first language  I learned was Python, but the one that owns my heart was TypeScript, using Node.js enviroment and React, developing with Restful API architecture.
 
 * 🌍  I'm based in São Paulo, Brazil
 * ✉️  You can contact me at [m47heusdr@protonmail.com](mailto:m47heusdr@protonmail.com)
-* 🧠  I'm learning MERN stack, focusing on backend, but planning to go to Data Science
-* 🤝  I'm open to collaborating on IA or Data science projects
+* 🧠  I'm learning MERN stack, focusing on backend and infra
+* 🤝  I'm open to collaborating on web projects.
 * ⚡  I love astronomy, biology and psychology
 
 ### Skills

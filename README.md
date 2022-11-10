@@ -4,15 +4,13 @@ Hi 👋 My name is Matheus Dantas Ricardo
 Backend Developer
 -------------------------
 
-I've been learning web development and databases since 2021, when I started my studies in IT. Currently I'm about to start a college related in IT. The first language I learned was Python, but the one that owns my heart was TypeScript, using Node.js enviroment and React, developing with Restful API architecture.
+I've been learning web development since 2021, but only in 2022 I have a close contact with infrastructure, and then I've dived in the studies of this amazing but underated area, actually my main concern is with infrastructure and cloud computing using AWS, and always implementing the concepts of DevOps to everyone.
 
 * 🌍  I'm based in São Paulo, Brazil
 * ✉️  You can contact me at [matheus-dr@proton.me](mailto:matheus-dr@proton.me)
-* 🧠  I'm currently learning Clean Architecture, Java and NextJs
-* 🤝  I'm open to collaborating on backend web projects
-* ⚡  I love astronomy, biology, History and psychology
-* 📄  Know about my experiences [https://resume.io/r/iDZi9vOmE](https://resume.io/r/iDZi9vOmE)
-* 💬 Ask me about Databases, TypeScript, Java, Bussiness rules and Clean Architecture
+* 🧠  I'm currently learning AWS services, Kubernetes and Jenkins
+* 🤝  I'm open to collaborating on DevOps and Cloud Projects
+* 💬  Ask me about Cloud computing, Docker, Python for automation, IaaC and Jenkins
 
 ### Skills
 

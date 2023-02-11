@@ -4,11 +4,11 @@ Hi 👋 My name is Matheus Dantas Ricardo
 DevOps Engineer
 -------------------------
 
-I've been learning web development since 2021, but only in 2022 I have a close contact with infrastructure, and then I've dived in the studies of this amazing but underated area, actually my main concern is with infrastructure and cloud computing using AWS, and always implementing the concepts of DevOps to everyone.
+I've been learning web development since 2021, but only in 2022 I have a close contact with infrastructure, and then I've dived in the studies of this amazing but underated area, actually my main concern is with infrastructure cloud computing using AWS and mostly important automations of processes that can make a lot of gain of value and time.
 
 * 🌍  I'm based in São Paulo, Brazil
 * ✉️  You can contact me at [matheus-dr@proton.me](mailto:matheus-dr@proton.me)
-* 🧠  I'm currently learning AWS services, Kubernetes and Jenkins
+* 🧠  I'm currently learning DevOps tools (AWS, Jenkins, Docker, Kubernetes, Terraform and Ansible)
 * 🤝  I'm open to collaborating on DevOps and Cloud Projects
 * 💬  Ask me about Cloud computing, Docker, Python for automation, IaaC and Jenkins
 

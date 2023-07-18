@@ -1,0 +1,7 @@
+/**/__pycache__/*
+/.idea
+/staticfiles
+/build
+db.sqlite3
+.env*
+!.env.example

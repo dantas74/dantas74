@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/dockerfiles/dev/Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      APP_SECRET_KEY: q21bbxj6_jt3o3o&9m^*-_$5g=&*wost39rmj!6m#%ujrx^g80
+      APP_DEBUG: "True"
+      APP_HOST: localhost
+      DYNAMODB_HOST: http://dynamo:8000
+
+  dynamo:
+    image: amazon/dynamodb-local:2.0.0

@@ -1,7 +1,7 @@
-from django_distill import distill_path
+from django.urls import path
 
 from . import views
 
 urlpatterns = [
-    distill_path('', views.HomeView.as_view(), name='home')
+    path('', views.HomeView.as_view(), name='home')
 ]

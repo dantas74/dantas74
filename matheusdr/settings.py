@@ -20,12 +20,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-hg%#q#)56=x22%h#is+dj80tg!06as=@039$*rve_5rl21eltg'
+SECRET_KEY = getenv('APP_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = getenv('APP_DEBUG') == 'True'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    getenv('APP_HOST', 'localhost')
+]
 
 # Application definition
 
@@ -37,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap5',
-    'django_distill',
     'home',
     'blog',
 ]
@@ -79,8 +80,12 @@ WSGI_APPLICATION = 'matheusdr.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': getenv('DB_NAME'),
+        'USER': getenv('DB_USER'),
+        'PASSWORD': getenv('DB_PASSWORD'),
+        'HOST': getenv('DB_HOST'),
+        'PORT': getenv('DB_PORT'),
     }
 }
 
@@ -124,7 +129,22 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATIC_URL = 'static/'
 
+# Media files
+# https://docs.djangoproject.com/en/4.1/topics/files/
+MEDIA_ROOT = BASE_DIR / 'uploads'
+
+MEDIA_URL = 'media/'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# AWS Config
+AWS_STORAGE_BUCKET_NAME = getenv('AWS_BUCKET_NAME')
+
+AWS_S3_REGION_NAME = getenv('AWS_BUCKET_REGION')
+
+MEDIAFILES_FOLDER = 'uploads'
+
+DEFAULT_FILE_STORAGE = 'custom_storage.MediaFileStorage'

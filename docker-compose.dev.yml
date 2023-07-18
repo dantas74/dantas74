@@ -9,11 +9,52 @@ services:
       - "8000:8000"
     volumes:
       - .:/app
+      - $HOME/.aws:/app/.aws
     environment:
+      HOME: /app
       APP_SECRET_KEY: q21bbxj6_jt3o3o&9m^*-_$5g=&*wost39rmj!6m#%ujrx^g80
       APP_DEBUG: "True"
       APP_HOST: localhost
-      DYNAMODB_HOST: http://dynamo:8000
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: blog
+      DB_DATABASE: blog
+      AWS_BUCKET_NAME: matheus-dr-dev-s3-blog
+      AWS_BUCKET_REGION: sa-east-1
 
-  dynamo:
-    image: amazon/dynamodb-local:2.0.0
+  manage.py:
+    build:
+      context: .
+      dockerfile: docker/dockerfiles/dev/Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - $HOME/.aws:/app/.aws
+    entrypoint:
+      - python
+      - manage.py
+    environment:
+      HOME: /app
+      APP_SECRET_KEY: q21bbxj6_jt3o3o&9m^*-_$5g=&*wost39rmj!6m#%ujrx^g80
+      APP_DEBUG: "True"
+      APP_HOST: localhost
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: blog
+      DB_DATABASE: blog
+      AWS_BUCKET_NAME: matheus-dr-dev-s3-blog
+      AWS_BUCKET_REGION: sa-east-1
+
+  postgres:
+    image: postgres:15.3-alpine
+    environment:
+      POSTGRES_PASSWORD: blog
+      POSTGRES_DB: blog
+    volumes:
+      - blog-db:/var/lib/postgresql/data
+
+volumes:
+  blog-db: { }

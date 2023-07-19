@@ -60,11 +60,9 @@ services:
     environment:
       - SERVICES=s3
       - DEBUG=1
-      - DEFAULT_REGION=sa-east-1
+      - AWS_DEFAULT_REGION=sa-east-1
       - AWS_ACCESS_KEY_ID=matheusdr
       - AWS_SECRET_ACCESS_KEY=matheusdr
-    volumes:
-      - blog-s3:/var/lib/localstack
     networks:
       - localstack
 
@@ -80,7 +78,6 @@ services:
 
 volumes:
   blog-db: { }
-  blog-s3: { }
 
 networks:
   default: { }

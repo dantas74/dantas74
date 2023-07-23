@@ -1,35 +1,60 @@
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+{% load bootstrap_icons %}
+{% load static %}
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home</a>
-                </li>
+<nav class="navbar navbar-expand-lg fixed-top bg-primary-color" id="navbar">
+    <div class="container py-3">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            {# TODO          <img src="{% static 'img/logo.png' %}" alt="matheus-dr"> #}
+            <span>matheus-dr</span>
+        </a>
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbar-items"
+                aria-controls="navbar-items"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            {% bs_icon 'list' %}
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-items">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                {% url 'home' as home_url %}
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a
+                            href="{{ home_url }}"
+                            class="nav-link {% if request.path == home_url %}active{% endif %}"
+                            {% if request.path == home_url %}aria-current="page"{% endif %}
+                    >Home</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
+
+                {% url 'about-me' as about_me_url %}
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
+                    <a
+                            href="{{ about_me_url }}"
+                            class="nav-link {% if request.path == about_me_url %}active{% endif %}"
+                            {% if request.path == about_me_url %}aria-current="page"{% endif %}
+                    >Sobre Mim</a>
+                </li>
+
+                {% url 'portfolio' as portfolio_url %}
+                <li class="nav-item">
+                    <a
+                            href="{{ portfolio_url }}"
+                            class="nav-link {% if request.path == portfolio_url %}active{% endif %}"
+                            {% if request.path == portfolio_url %}aria-current="page"{% endif %}
+                    >Projetos</a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                            href="{% url 'index-blog' %}"
+                            class="nav-link {% if '/blog/' in request.path %}active{% endif %}"
+                            {% if '/blog/' in request.path %}aria-current="page"{% endif %}
+                    >Blog</a>
                 </li>
             </ul>
         </div>
-    </nav>
-</header>
+    </div>
+</nav>

@@ -5,13 +5,13 @@ services:
     build:
       context: .
       dockerfile: docker/dockerfiles/dev/Dockerfile
+    depends_on:
+      - postgres
     ports:
       - "8000:8000"
     volumes:
       - .:/app
-      - $HOME/.aws:/app/.aws
     environment:
-      HOME: /app
       APP_SECRET_KEY: q21bbxj6_jt3o3o&9m^*-_$5g=&*wost39rmj!6m#%ujrx^g80
       APP_DEBUG: "True"
       APP_HOST: localhost
@@ -26,7 +26,7 @@ services:
       AWS_BUCKET_NAME: matheus-dr-dev-s3-blog
       AWS_BUCKET_REGION: sa-east-1
     networks:
-      - default
+      - app
       - localstack
 
   manage.py:
@@ -74,12 +74,12 @@ services:
     volumes:
       - blog-db:/var/lib/postgresql/data
     networks:
-      - default
+      - app
 
 volumes:
   blog-db: { }
 
 networks:
-  default: { }
+  app: { }
   localstack:
     external: true

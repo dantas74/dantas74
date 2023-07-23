@@ -4,6 +4,7 @@
 /build
 /.aws
 /.ash_history
+/.viminfo
 db.sqlite3
 .env*
 !.env.example

@@ -5,6 +5,7 @@
 /.aws
 /.ash_history
 /.viminfo
+/icon_cache
 db.sqlite3
 .env*
 !.env.example

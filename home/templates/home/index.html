@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block css_styles %}
+    <link href="{% static 'css/slider.css' %}" rel="stylesheet">
+    <link href="{% static 'css/mini-banners.css' %}" rel="stylesheet">
+{% endblock %}
 
 {% block content %}
-    <p>Landing Page</p>
+    {% include 'slider.html' %}
+    {% include 'mini-banners.html' %}
 {% endblock %}

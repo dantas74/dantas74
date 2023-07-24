@@ -149,3 +149,6 @@ AWS_S3_REGION_NAME = getenv('AWS_BUCKET_REGION')
 MEDIAFILES_FOLDER = 'uploads'
 
 DEFAULT_FILE_STORAGE = 'custom_storage.MediaFileStorage'
+
+# Bootstrap Icons
+BS_ICONS_CACHE = BASE_DIR / 'icon_cache'

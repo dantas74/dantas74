@@ -1,0 +1,43 @@
+#slider .carousel-caption {
+    bottom: 3em;
+}
+
+#slider .carousel-caption h5 {
+    font-size: 2.5em;
+    text-shadow: #000 2px 2px;
+}
+
+#slider .btn {
+    padding: 0.3em 0.8em;
+    font-size: 1em;
+    margin-top: 1em;
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: #222;
+    opacity: 0.8;
+}
+
+.carousel-indicators .active {
+    background-color: #000;
+}
+
+@media (min-width: 768px) {
+    #slider .carousel-caption {
+        bottom: 15em;
+    }
+
+    #slider .carousel-caption h5 {
+        font-size: 4em;
+        text-shadow: #000 3px 3px;
+    }
+
+    #slider .btn {
+        padding: 0.6em 1.6em;
+        font-size: 1em;
+    }
+
+    .carousel-indicators {
+        bottom: 7em;
+    }
+}
